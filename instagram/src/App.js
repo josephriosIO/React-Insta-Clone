@@ -17,11 +17,24 @@ class App extends Component {
       data: dummyData
     };
   }
+
+  addComment = comment => {
+    const copy = this.state.data.slice();
+    const newComment = {
+      id: Date.now(),
+      username: "joseph",
+      text: comment
+    };
+    copy.push(newComment);
+
+    this.setState({ data: copy });
+  };
+
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <Posts posts={this.state.data} />
+        <Posts addComment={this.addComment} posts={this.state.data} />
       </div>
     );
   }
