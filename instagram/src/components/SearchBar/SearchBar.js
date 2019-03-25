@@ -5,12 +5,14 @@ import "./SearchBar.css";
 const SearchBar = () => {
   return (
     <nav className="search-bar">
-      <h1> Instagram </h1>
-      <input />
+      <h1>
+        <i class="fab fa-instagram" /> | Instagram{" "}
+      </h1>
+      <input placeholder="Search" />
       <div className="buttons">
-        <a> button1 </a>
-        <a> button2 </a>
-        <a> button3 </a>
+        <i class="far fa-compass fa-2x" />
+        <i class="far fa-heart fa-2x" />
+        <i class="far fa-user fa-2x" />
       </div>
     </nav>
   );

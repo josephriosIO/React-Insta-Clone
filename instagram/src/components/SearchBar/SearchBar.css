@@ -1,4 +1,19 @@
 .search-bar {
+  z-index: 2357895789235980;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  background: #fffafa;
+}
+
+input {
+  height: 1.5rem;
+  width: 15rem;
+  text-align: center;
+}
+
+.buttons i {
+  margin: 0 15px;
 }
