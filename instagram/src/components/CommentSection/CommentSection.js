@@ -5,28 +5,52 @@ import PropTypes from "prop-types";
 import "./comments.css";
 
 class Comments extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      text: ""
+      text: "",
+      comments: this.props.comments
     };
   }
+
+  componentDidMount() {
+    const id = this.props.postId;
+    if (localStorage.getItem(id)) {
+      this.setState({
+        comments: JSON.parse(localStorage.getItem(this.props.postId))
+      });
+    } else {
+      this.addComments();
+    }
+  }
+
+  addComments = () => {
+    localStorage.setItem(
+      this.props.postId,
+      JSON.stringify(this.state.comments)
+    );
+  };
+
   handleChanges = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   submitComment = e => {
     e.preventDefault();
+    const newComment = {
+      username: "josephrios",
+      text: this.state.text
+    };
+    const comments = this.state.comments.slice();
+    comments.push(newComment);
 
-    this.props.addComment(this.state.comment);
-
-    this.setState({ comment: "" });
+    this.setState({ comments, text: "" });
   };
   render() {
     return (
       <>
-        {this.props.comments.map(comment => (
+        {this.state.comments.map(comment => (
           <div key={comment.id} className="comment">
             <p>
               <strong>{comment.username}</strong> {comment.text}
@@ -34,10 +58,10 @@ class Comments extends Component {
           </div>
         ))}
         <div className="input">
-          <form onChange={this.submitComment}>
+          <form onSubmit={this.submitComment}>
             <input
               type="text"
-              name="comment"
+              name="text"
               value={this.state.text}
               onChange={this.handleChanges}
               placeholder="      Add a comment..."
@@ -53,7 +77,7 @@ class Comments extends Component {
 Comments.propTypes = {
   comments: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       username: PropTypes.string,
       text: PropTypes.string
     })

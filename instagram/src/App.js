@@ -14,21 +14,13 @@ class App extends Component {
     super();
 
     this.state = {
-      data: dummyData
+      data: []
     };
   }
 
-  addComment = comment => {
-    const copy = this.state.data.slice();
-    const newComment = {
-      id: Date.now(),
-      username: "joseph",
-      text: comment
-    };
-    copy.push(newComment);
-
-    this.setState({ data: copy });
-  };
+  componentDidMount() {
+    this.setState({ data: dummyData });
+  }
 
   render() {
     return (
