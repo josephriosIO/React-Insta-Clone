@@ -6,6 +6,9 @@ import dummyData from "./dummy-data";
 // search bar
 import SearchBar from "./components/SearchBar/SearchBar";
 
+//posts
+import Posts from "./components/PostContainer/PostContainer";
+
 class App extends Component {
   constructor() {
     super();
@@ -18,6 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
+        <Posts posts={this.state.data} />
       </div>
     );
   }
