@@ -4,9 +4,15 @@
   justify-content: center;
 }
 
+.posts img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .post {
-  border: 1px solid red;
+  border: 1px solid #dcdcdc;
   margin: 5rem 0;
+  width: 650px;
 }
 
 .post-header {

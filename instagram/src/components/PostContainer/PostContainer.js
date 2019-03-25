@@ -3,6 +3,9 @@ import React, { Component } from "react";
 //styling
 import "./posts.css";
 
+// comments
+import Comments from "../CommentSection/CommentSection.js";
+
 class Posts extends Component {
   constructor() {
     super();
@@ -20,9 +23,10 @@ class Posts extends Component {
               </div>
               <img src={post.imageUrl} />
               <div className="post-data">
-                <i class="far fa-heart" />
-                <i class="far fa-comment" />
+                <i className="far fa-heart" />
+                <i className="far fa-comment" />
                 <p>{post.likes} likes </p>
+                <Comments comments={post.comments} />
               </div>
             </div>
           </div>
