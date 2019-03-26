@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        <Posts addComment={this.addComment} posts={this.state.data} />
+        <Posts postsData={this.state.data} />
       </div>
     );
   }

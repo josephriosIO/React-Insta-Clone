@@ -1,36 +1,17 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-
-//styling
 import "./comments.css";
+import Comments from "./Comments.js";
+import Likes from "./Likes";
 
-class Comments extends Component {
+class CommentSection extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      text: "",
-      comments: this.props.comments
+      comments: this.props.comments,
+      comment: ""
     };
   }
-
-  componentDidMount() {
-    const id = this.props.postId;
-    if (localStorage.getItem(id)) {
-      this.setState({
-        comments: JSON.parse(localStorage.getItem(this.props.postId))
-      });
-    } else {
-      this.addComments();
-    }
-  }
-
-  addComments = () => {
-    localStorage.setItem(
-      this.props.postId,
-      JSON.stringify(this.state.comments)
-    );
-  };
 
   handleChanges = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -39,49 +20,44 @@ class Comments extends Component {
   submitComment = e => {
     e.preventDefault();
     const newComment = {
+      id: Date.now(),
       username: "josephrios",
-      text: this.state.text
+      text: this.state.comment
     };
+
     const comments = this.state.comments.slice();
     comments.push(newComment);
 
-    this.setState({ comments, text: "" });
+    this.setState({ comments, comment: "" });
   };
+
   render() {
     return (
       <>
+        <Likes likes={this.props.likes} comments={this.state.comments} />
         {this.state.comments.map(comment => (
-          <div key={comment.id} className="comment">
-            <p>
-              <strong>{comment.username}</strong> {comment.text}
-            </p>
-          </div>
+          <Comments
+            comments={this.state.comments}
+            username={comment.username}
+            comment={comment.text}
+          />
         ))}
-        <div className="input">
-          <form onSubmit={this.submitComment}>
-            <input
-              type="text"
-              name="text"
-              value={this.state.text}
-              onChange={this.handleChanges}
-              placeholder="      Add a comment..."
-              className="comment-input"
-            />
-          </form>
+        <div className="post-data">
+          <div className="input">
+            <form onSubmit={this.submitComment}>
+              <input
+                type="text"
+                name="comment"
+                value={this.state.comment}
+                onChange={this.handleChanges}
+                placeholder="Add a comment..."
+                className="comment-input"
+              />
+            </form>
+          </div>
         </div>
       </>
     );
   }
 }
-
-Comments.propTypes = {
-  comments: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      username: PropTypes.string,
-      text: PropTypes.string
-    })
-  )
-};
-
-export default Comments;
+export default CommentSection;

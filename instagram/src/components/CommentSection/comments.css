@@ -16,3 +16,19 @@
   text-align: left;
   height: 40px;
 }
+
+.clicked {
+  background: red;
+}
+
+.icons i {
+  margin: 0 15px;
+}
+
+.icons p {
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+.fas.fa-heart {
+  color: red;
+}

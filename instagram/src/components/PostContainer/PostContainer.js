@@ -1,41 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
 
 //styling
 import "./posts.css";
 
 // comments
-import Comments from "../CommentSection/CommentSection.js";
+import PostHeader from "./PostHeader";
+import PostBody from "./PostBody";
+import CommentSection from "../CommentSection/CommentSection.js";
 
-class Posts extends Component {
-  constructor() {
-    super();
+const Posts = props => {
+  return (
+    <>
+      {props.postsData.map(post => (
+        <div className="posts">
+          <div className="post">
+            <PostHeader
+              key={post.id}
+              username={post.username}
+              profilePicture={post.thumbnailUrl}
+            />
 
-    this.state = {
-      comments: []
-    };
-  }
-  render() {
-    return (
-      <>
-        {this.props.posts.map(post => (
-          <div key={post.id} className="posts">
-            <div className="post">
-              <div className="post-header">
-                <img src={post.thumbnailUrl} />
-                <h1>{post.username}</h1>
-              </div>
-              <img src={post.imageUrl} />
-              <div className="post-data">
-                <i className="far fa-heart" />
-                <i className="far fa-comment" />
-                <p>{post.likes} likes </p>
-                <Comments postId={post.id} comments={post.comments} />
-              </div>
-            </div>
+            <PostBody image={post.imageUrl} />
+            <CommentSection
+              likes={post.likes}
+              index={post.id}
+              comments={post.comments}
+            />
           </div>
-        ))}
-      </>
-    );
-  }
-}
+        </div>
+      ))}
+    </>
+  );
+};
 export default Posts;
