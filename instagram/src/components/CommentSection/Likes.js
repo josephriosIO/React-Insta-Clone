@@ -22,9 +22,8 @@ class Likes extends Component {
   };
 
   likesGoDown = () => {
-    let likes = this.state.likes - 1;
     this.setState({
-      likes,
+      likes: this.props.likes + 1,
       clicked: !this.state.clicked
     });
   };
