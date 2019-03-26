@@ -13,7 +13,23 @@ class CommentSection extends Component {
     };
   }
 
-  handleChanges = e => {
+  componentDidMount() {
+    const id = this.props.index;
+    console.log(id);
+    if (localStorage.getItem(id)) {
+      this.setState({
+        comments: JSON.parse(localStorage.getItem(this.props.index))
+      });
+    } else {
+      this.setComments();
+    }
+  }
+
+  setComments = () => {
+    localStorage.setItem(this.props.index, JSON.stringify(this.state.comments));
+  };
+
+  handleChanges = (e, id) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -24,11 +40,13 @@ class CommentSection extends Component {
       username: "josephrios",
       text: this.state.comment
     };
-
+    const id = this.props.index;
     const comments = this.state.comments.slice();
     comments.push(newComment);
 
     this.setState({ comments, comment: "" });
+
+    localStorage.setItem(id, JSON.stringify(comments));
   };
 
   render() {
