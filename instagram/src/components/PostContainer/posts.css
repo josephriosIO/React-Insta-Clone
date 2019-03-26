@@ -31,3 +31,9 @@
   margin-left: 10px;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 500px) {
+  .post {
+    margin: 2.5rem 0;
+  }
+}

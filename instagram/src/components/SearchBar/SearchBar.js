@@ -1,12 +1,13 @@
 import React from "react";
 // styling
 import "./SearchBar.css";
+import logo from "./logo.png";
 
 const SearchBar = props => {
   return (
     <nav className="search-bar">
-      <h1>
-        <i className="fab fa-instagram" /> | Instagram{" "}
+      <h1 className="logo">
+        <i className="fab fa-instagram " /> | <img src={logo} alt="broken" />{" "}
       </h1>
       <input type="text" onKeyDown={props.search} placeholder="Search" />
       <div className="buttons">

@@ -8,6 +8,17 @@
   background: #fffafa;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  height: 3rem;
+  width: 9rem;
+}
+
 input {
   height: 1.5rem;
   width: 15rem;
@@ -16,4 +27,23 @@ input {
 
 .buttons i {
   margin: 0 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .buttons i {
+    margin: 0 5px;
+    font-size: 1.3rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+
+  input {
+    width: 3rem;
+  }
+
+  .logo img {
+    height: 1.8rem;
+    width: 5rem;
+  }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 //styling
 import "./posts.css";
 
@@ -12,7 +12,7 @@ const Posts = props => {
   return (
     <>
       {props.postsData.map(post => (
-        <div className="posts">
+        <div key={post.id} className="posts">
           <div className="post">
             <PostHeader
               key={post.id}
@@ -20,7 +20,7 @@ const Posts = props => {
               profilePicture={post.thumbnailUrl}
             />
 
-            <PostBody image={post.imageUrl} />
+            <PostBody username={post.username} image={post.imageUrl} />
             <CommentSection
               likes={post.likes}
               index={post.id}
@@ -31,5 +31,15 @@ const Posts = props => {
       ))}
     </>
   );
+};
+
+Posts.propTypes = {
+  postsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string,
+      profilePicture: PropTypes.string,
+      comments: PropTypes.array
+    })
+  )
 };
 export default Posts;

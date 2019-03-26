@@ -28,6 +28,7 @@ class App extends Component {
       if (post.username.includes(e.target.value)) {
         return post;
       }
+      return null;
     });
     this.setState({ filter: posts });
   };

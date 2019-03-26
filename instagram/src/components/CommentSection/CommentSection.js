@@ -37,6 +37,7 @@ class CommentSection extends Component {
         <Likes likes={this.props.likes} comments={this.state.comments} />
         {this.state.comments.map(comment => (
           <Comments
+            key={comment.id}
             comments={this.state.comments}
             username={comment.username}
             comment={comment.text}
