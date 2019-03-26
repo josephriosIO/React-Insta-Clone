@@ -12,6 +12,17 @@ class Likes extends Component {
 
   likesGoUp = () => {
     let likes = this.state.likes + 1;
+    if (this.state.clicked === true) {
+      likes = this.state.likes - 1;
+    }
+    this.setState({
+      likes,
+      clicked: !this.state.clicked
+    });
+  };
+
+  likesGoDown = () => {
+    let likes = this.state.likes - 1;
     this.setState({
       likes,
       clicked: !this.state.clicked
