@@ -7,8 +7,8 @@ import withAuthenticate from "./authentication/withAuthenticate";
 import dummyData from "./dummy-data";
 
 import PostsPages from "./components/PostContainer/PostsPage";
-
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPages);
+import Login from "./components/Login/Login";
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPages)(Login);
 
 class App extends Component {
   constructor() {
