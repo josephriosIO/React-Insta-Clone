@@ -15,7 +15,6 @@ class CommentSection extends Component {
 
   componentDidMount() {
     const id = this.props.index;
-    console.log(id);
     if (localStorage.getItem(id)) {
       this.setState({
         comments: JSON.parse(localStorage.getItem(this.props.index))
@@ -52,7 +51,12 @@ class CommentSection extends Component {
   onDeleteClick = id => {
     const { comments } = this.state;
 
-    const newComments = comments.filter(comment => comment.id !== id);
+    const newComments = comments.filter(comment => {
+      if (comment.id !== id) {
+        localStorage.removeItem("id");
+      }
+      return comment.id !== id;
+    });
 
     this.setState({
       comments: newComments
