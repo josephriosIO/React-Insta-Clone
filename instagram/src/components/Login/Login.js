@@ -31,22 +31,30 @@ class Login extends Component {
         <div className="login-data">
           <form className="user-input">
             <img className="insta-logo" src={logo0} />
-            <p className="top-info">
+            <p className="main top-info">
               Sign up to see photos and videos from your friends.
             </p>
-            <button onClick={this.signIn}>Log in with Facebook</button>
-            <p className="or">OR</p>
-            <input placeholder="Mobile Number or Email" />
-            <input placeholder="Full Name" />
+            <button className="login-btn" onClick={this.signIn}>
+              Log in with Facebook
+            </button>
+            <p className="main or">OR</p>
             <input
+              className="login-input"
+              placeholder="Mobile Number or Email"
+            />
+            <input className="login-input" placeholder="Full Name" />
+            <input
+              className="login-input"
               value={this.state.username}
               onChange={this.handleChanges}
               name="username"
               placeholder="username"
             />
-            <input placeholder="password" />
-            <button onClick={this.signIn}>login</button>
-            <p className="top-info">
+            <input className="login-input" placeholder="password" />
+            <button className="login-btn" onClick={this.signIn}>
+              login
+            </button>
+            <p className="main top-info">
               By signing up, you agree to our Terms , Data Policy and Cookies
               Policy .
             </p>

@@ -35,14 +35,14 @@
   height: 100%;
 }
 
-p {
+.main {
   padding-left: 3rem;
   margin: 30px 0;
   text-align: center;
   color: #696969;
 }
 
-input {
+.login-input {
   width: 100%;
   margin: 0.5rem 0;
 }
