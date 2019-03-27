@@ -6,7 +6,7 @@ const Comments = props => {
     <>
       <div className="comment">
         <p>
-          <strong>{props.username}</strong> {props.comment}{" "}
+          <strong>{props.username}</strong> {props.comment}
           <p className="time">
             {moment()
               .startOf("hour")
