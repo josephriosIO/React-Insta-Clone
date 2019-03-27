@@ -10,12 +10,14 @@ const withAuthenticate = App => LoginPage =>
     }
 
     componentDidMount() {
-      this.setState({
-        loggedIn: !this.state.loggedIn
-      });
+      if (localStorage.getItem("username")) {
+        this.setState({
+          loggedIn: true
+        });
+      }
     }
     render() {
-      if (this.state.loggedIn) {
+      if (!this.state.loggedIn) {
         return <LoginPage />;
       }
       return <App />;

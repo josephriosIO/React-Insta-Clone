@@ -37,7 +37,7 @@ class CommentSection extends Component {
     e.preventDefault();
     const newComment = {
       id: Date.now(),
-      username: "josephrios",
+      username: localStorage.getItem("username"),
       text: this.state.comment
     };
     const id = this.props.index;
