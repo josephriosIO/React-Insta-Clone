@@ -49,12 +49,23 @@ class CommentSection extends Component {
     localStorage.setItem(id, JSON.stringify(comments));
   };
 
+  onDeleteClick = id => {
+    const { comments } = this.state;
+
+    const newComments = comments.filter(comment => comment.id !== id);
+
+    this.setState({
+      comments: newComments
+    });
+  };
+
   render() {
     return (
       <>
         <Likes likes={this.props.likes} comments={this.state.comments} />
         {this.state.comments.map(comment => (
           <Comments
+            onDeleteClick={this.onDeleteClick.bind(this, comment.id)}
             key={comment.id}
             comments={this.state.comments}
             username={comment.username}

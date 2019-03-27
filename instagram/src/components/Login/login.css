@@ -47,7 +47,7 @@
   margin: 0.5rem 0;
 }
 
-button {
+.login-btn {
   height: 30px;
   background-color: #3897f0;
   border: 1px solid #3897f0;
