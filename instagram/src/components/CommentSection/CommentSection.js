@@ -50,7 +50,7 @@ class CommentSection extends Component {
 
   onDeleteClick = id => {
     const { comments } = this.state;
-
+    const idx = this.props.index;
     const newComments = comments.filter(comment => {
       if (comment.id !== id) {
         localStorage.removeItem("id");
@@ -61,6 +61,7 @@ class CommentSection extends Component {
     this.setState({
       comments: newComments
     });
+    localStorage.setItem(idx, JSON.stringify(newComments));
   };
 
   render() {
