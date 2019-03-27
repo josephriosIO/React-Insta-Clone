@@ -27,7 +27,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
-        <img src={logo} />
+        <img className="side-image" src={logo} />
         <div className="login-data">
           <form className="user-input">
             <img className="insta-logo" src={logo0} />
