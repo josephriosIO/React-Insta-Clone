@@ -50,7 +50,11 @@ class Login extends Component {
               name="username"
               placeholder="username"
             />
-            <input className="login-input" placeholder="password" />
+            <input
+              className="login-input"
+              type="password"
+              placeholder="password"
+            />
             <button className="login-btn" onClick={this.signIn}>
               login
             </button>
