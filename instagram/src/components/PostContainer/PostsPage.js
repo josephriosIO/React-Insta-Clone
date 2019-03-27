@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // data for dummy users
-
+import dummyData from "./dummy-data";
 // search bar
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -12,7 +12,7 @@ class PostsPages extends Component {
     super(props);
 
     this.state = {
-      data: this.props.data,
+      data: dummyData,
       filter: []
     };
   }
