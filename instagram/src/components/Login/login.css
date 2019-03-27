@@ -1,45 +1,9 @@
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.insta-logo {
-  padding-left: 5.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  width: 10rem;
-}
-
 .or {
   padding: 0;
 }
 
-.user-input {
-  display: flex;
-  flex-flow: column;
-}
-
 .top-info {
   width: 250px;
-}
-
-.login-data {
-  margin-left: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #fffafa;
-  height: 100%;
-}
-
-.main {
-  padding-left: 3rem;
-  margin: 30px 0;
-  text-align: center;
-  color: #696969;
 }
 
 .login-input {
@@ -47,22 +11,7 @@
   margin: 0.5rem 0;
 }
 
-.login-btn {
-  height: 30px;
-  background-color: #3897f0;
-  border: 1px solid #3897f0;
-  border-radius: 4px;
-  color: #fff;
-  position: relative;
-}
-
 @media screen and (max-width: 500px) {
-  .insta-logo {
-    padding-left: 6.3rem;
-  }
-  .login-data {
-    margin-left: 0;
-  }
   .side-image {
     display: none;
   }
