@@ -29,6 +29,13 @@ input {
   margin: 0 15px;
 }
 
+.log-out {
+  margin-left: 250px;
+  background: #16a2b8;
+  border-radius: 25px;
+  color: white;
+}
+
 @media screen and (max-width: 500px) {
   .buttons i {
     margin: 0 5px;
@@ -45,5 +52,8 @@ input {
   .logo img {
     height: 1.8rem;
     width: 5rem;
+  }
+  .log-out {
+    margin: 0;
   }
 }

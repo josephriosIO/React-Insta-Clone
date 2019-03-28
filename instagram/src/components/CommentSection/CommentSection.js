@@ -95,8 +95,8 @@ class CommentSection extends Component {
       <>
         {/* passing down the likes prop that i brought down for postcontainer*/}
         <Likes likes={this.props.likes} comments={this.state.comments} />
-        // mapping the NEW comments and passing down its props to comments
-        component
+        {/* mapping the NEW comments and passing down its props to comments*/}
+
         {this.state.comments.map(comment => (
           <Comments
             onDeleteClick={this.onDeleteClick.bind(this, comment.id)}

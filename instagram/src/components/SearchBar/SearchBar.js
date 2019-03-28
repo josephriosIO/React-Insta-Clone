@@ -18,7 +18,9 @@ const SearchBar = props => {
         {/* on the key down so it registers every key*/}
         <input type="search" onKeyDown={props.search} placeholder="Search" />
         {/* button that calls the sign out function on a click*/}
-        <button onClick={signOut}>Logout</button>
+        <button className="log-out" onClick={signOut}>
+          Logout
+        </button>
       </form>
       <div className="buttons">
         <i className="far fa-compass fa-2x" />
