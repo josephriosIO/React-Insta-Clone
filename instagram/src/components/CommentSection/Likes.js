@@ -38,7 +38,7 @@ class Likes extends Component {
           onClick={this.likesGoUp}
 
           // when the boolean of clicked shows true change the css class to
-          // a different heart if false do nothing
+          // a different heart if false do nothing .
           className={`far fa-heart fa-2x heart ${
             this.state.clicked ? "fas fa-heart " : null
           }`}
