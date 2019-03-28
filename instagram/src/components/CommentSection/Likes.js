@@ -30,15 +30,11 @@ class Likes extends Component {
     });
   };
 
-
   render() {
     return (
       <div className="icons">
         <i
           onClick={this.likesGoUp}
-
-          // when the boolean of clicked shows true change the css class to
-          // a different heart if false do nothing .
           className={`far fa-heart fa-2x heart ${
             this.state.clicked ? "fas fa-heart " : null
           }`}

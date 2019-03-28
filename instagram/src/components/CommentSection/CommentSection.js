@@ -93,12 +93,11 @@ class CommentSection extends Component {
   render() {
     return (
       <>
-      // passing down the likes prop that i brought down for postcontainer
+        {/* passing down the likes prop that i brought down for postcontainer*/}
         <Likes likes={this.props.likes} comments={this.state.comments} />
-        // mapping the NEW comments and passing down its props to comments component
+        // mapping the NEW comments and passing down its props to comments
+        component
         {this.state.comments.map(comment => (
-          // on the onDeleteClick function we have to use bind to bind the this
-          // keyword to pass down the id
           <Comments
             onDeleteClick={this.onDeleteClick.bind(this, comment.id)}
             key={comment.id}
@@ -109,7 +108,7 @@ class CommentSection extends Component {
         ))}
         <div className="post-data">
           <div className="input">
-            // a form that accesses most of the functions on this level
+            {/* a form that accesses most of the functions on this level*/}
             <form onSubmit={this.submitComment}>
               <input
                 type="text"

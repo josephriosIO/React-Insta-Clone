@@ -35,12 +35,11 @@ class PostsPages extends Component {
   render() {
     return (
       <div className="App">
-        // passing down the search function to the component SearchBar
+        {/* passing down the search function to the component SearchBar*/}
         <SearchBar search={this.search} />
+        {/* if the this.state.filter length is greater than 0 show filtered posts*/}
         <Posts
           postsData={
-            // if the this.state.filter length is greater than 0 show filtered posts
-            // if it's less than 0 show the original data
             this.state.filter.length > 0 ? this.state.filter : this.state.data
           }
         />

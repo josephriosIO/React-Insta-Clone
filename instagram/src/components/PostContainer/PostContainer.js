@@ -11,20 +11,21 @@ import CommentSection from "../CommentSection/CommentSection.js";
 const Posts = props => {
   return (
     <>
-    // mapping through the post seperating them by components
+      {/* mapping through the post seperating them by components*/}
       {props.postsData.map(post => (
         <div key={post.id} className="posts">
           <div className="post">
-            // passing for every post it's id, username, and thumbnailUrl to PostHeader
+            {/*
+              // passing for every post it's id, username, and thumbnailUrl to postheader
+            */}
             <PostHeader
               key={post.id}
               username={post.username}
               profilePicture={post.thumbnailUrl}
             />
-
-          // passing username, and imageUrl to PostBody
+            {/* passing username, and imageUrl to PostBody*/}
             <PostBody username={post.username} image={post.imageUrl} />
-            // passing likes, id and comments array to CommentSection
+            {/* passing likes, id and comments array to CommentSection*/}
             <CommentSection
               likes={post.likes}
               index={post.id}

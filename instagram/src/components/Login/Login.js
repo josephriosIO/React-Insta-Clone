@@ -1,17 +1,23 @@
 import React, { Component } from "react";
-import "./login.css";
+
 // images
 import logo from "./logo.png";
 import logo0 from "./logo0.png";
 import bottom from "./bottom-info.png";
 // import styled components
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import "./login.css";
 
 // styled components
 const LoginDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+
+  @media screen and (max-width: 500px) {
+    margin-left: -5px;
+  }
 `;
 
 const LoginData = styled.div`
@@ -41,6 +47,12 @@ const MainP = styled.p`
   margin: 30px 0;
   text-align: center;
   color: #696969;
+
+  ${props =>
+    props.small &&
+    css`
+      padding: 0;
+    `};
 `;
 
 const Form = styled.form`
@@ -97,7 +109,7 @@ class Login extends Component {
               Sign up to see photos and videos from your friends.
             </MainP>
             <Button onClick={this.signIn}>Log in with Facebook</Button>
-            <MainP className="or">OR</MainP>
+            <MainP small>OR</MainP>
             <input
               className="login-input"
               placeholder="Mobile Number or Email"
