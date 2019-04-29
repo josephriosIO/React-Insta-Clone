@@ -1,0 +1,14 @@
+.top-info {
+  width: 250px;
+}
+
+.login-input {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  .side-image {
+    display: none;
+  }
+}

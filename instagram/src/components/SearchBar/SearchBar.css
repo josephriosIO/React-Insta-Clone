@@ -1,0 +1,59 @@
+.search-bar {
+  z-index: 2357895789235980;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fffafa;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  height: 3rem;
+  width: 9rem;
+}
+
+input {
+  height: 1.5rem;
+  width: 15rem;
+  text-align: center;
+}
+
+.buttons i {
+  margin: 0 15px;
+}
+
+.log-out {
+  margin-left: 250px;
+  background: #16a2b8;
+  border-radius: 25px;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .buttons i {
+    margin: 0 5px;
+    font-size: 1.3rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+
+  input {
+    width: 3rem;
+  }
+
+  .logo img {
+    height: 1.8rem;
+    width: 5rem;
+  }
+  .log-out {
+    margin: 0;
+  }
+}

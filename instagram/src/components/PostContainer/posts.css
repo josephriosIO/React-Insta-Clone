@@ -1,0 +1,39 @@
+.posts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posts img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.post {
+  border: 1px solid #dcdcdc;
+  margin: 5rem 0;
+  width: 650px;
+}
+
+.post-header {
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.post-header img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.post-header h1 {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .post {
+    margin: 2.5rem 0;
+  }
+}

@@ -1,0 +1,39 @@
+.comment {
+  word-wrap: break-word;
+  display: flex;
+  margin: 0 5px;
+}
+
+.comment p {
+  margin: 5px 0;
+  line-height: 1.2;
+}
+
+.input .comment-input {
+  padding: 0;
+  border-width: 0;
+  width: 100%;
+  text-align: left;
+  height: 40px;
+}
+
+.clicked {
+  background: red;
+}
+
+.icons i {
+  margin: 0 15px;
+}
+
+.icons p {
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+.fas.fa-heart {
+  color: red;
+}
+
+.time {
+  font-size: 12px;
+  color: #939393;
+}
